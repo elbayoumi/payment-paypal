@@ -40,6 +40,9 @@ Route::get('/autocomplete',[TextController::class, 'autocomplete'] )->name('auto
 
 
 Route::post('/save-text', [TextController::class, 'saveText'])->name('save-text');
+Route::get('/save',function () {
+return view('text.index');
+})->name('text');
 
 ////////////////////////
 
