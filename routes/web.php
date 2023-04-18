@@ -30,7 +30,16 @@ Route::get('/transactions', function () {
     return view('transactions.index');
 })->name('return.transactions');
 
+// web.php
 
+use Illuminate\Support\Facades\DB;
+
+Route::get('/autocomplete',[TextController::class, 'autocomplete'] )->name('autocomplete');
+
+// web.php
+
+
+Route::post('/save-text', [TextController::class, 'saveText'])->name('save-text');
 
 ////////////////////////
 
