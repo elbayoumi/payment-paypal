@@ -80,8 +80,7 @@ class TextController extends Controller
     }
     public function  autocomplete(){
             $term = request('term');
-            $data = Text::table('texts')
-                ->where('text', 'LIKE', '%'.$term.'%')
+            $data = Text::where('text', 'LIKE', '%'.$term.'%')
                 ->distinct()
                 ->get(['text']);
             $results = [];
